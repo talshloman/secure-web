@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Login</title>
+<link rel="stylesheet" href="CSS/styleLogin.css">
+</head>
+
+<body>
+<div class="container">
+	<section id="content">
+		<form action = "Login" method = "post">
+			<h1>IWantSomething</h1>
+			<div>
+				<input type="text" placeholder="Username" name="username" VALUE="" maxlength="15" >
+			</div>
+			<div>
+				<input type="password" placeholder="Password" name="password" VALUE="" >
+			</div>
+			<div>
+				<button TYPE="button" Value="login" onClick="validation (this.form);">Login</button>
+				<a href="Forgot.jsp">Lost your password?</a>
+				<a href="Register.html">Register</a>
+			</div>
+		</form><!-- form -->
+	</section><!-- content -->
+</div><!-- container -->
+
+<div id="comment"></div>
+
+	<script type="text/javascript">
+
+	function validation (form)
+		{	
+			var userName = form.username.value;
+			var Password = form.password.value;
+			
+			if((checkUserName(userName,userName.length)) == 1)
+			{
+				if(checkPassword(Password,Password.length) == 1)
+				{
+					form.submit(); 
+				}
+				else
+				{
+				   	document.getElementById("comment").innerHTML = "The data you entered are not good";
+					var iframe = document.getElementById("comment");  
+				    iframe.style.visibility="visible";
+				}
+			}
+			else
+			{
+			   	document.getElementById("comment").innerHTML = "The data you entered are not good";
+				var iframe = document.getElementById("comment");  
+			    iframe.style.visibility="visible";
+			}
+		}
+	
+		
+	function checkUserName(item, size)
+	{
+		for(var i = 0;i < size;i++){
+			if (/[a-zA-Z_]/.test(item[i]) == true) 
+			{
+		    	return 1;
+			}
+		}
+		
+		return 0;
+	}
+
+	function checkPassword(password, size)
+	{
+		if(size < 1 || size > 10)
+		{
+			return 0;
+		}
+		for(var i = 0;i < size; i++)
+		{
+			if (/[a-zA-Z0-9_]/.test(password[i]) == true) 
+			{
+				
+		    	return 1;
+			}
+			
+		}
+		return 0;
+	}
+	</script>
+</body>
+</html>
