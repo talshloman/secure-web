@@ -1,5 +1,6 @@
 # secure-web
 Friendly online clothing store and secure.
+
 The site is protected from:
 1) sql injection.
 2) XSS.
