@@ -1,4 +1,4 @@
-# secure-web
+# secureweb
 Friendly online clothing store and secure.
 
 The site is protected from:
